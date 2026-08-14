@@ -1,69 +1,140 @@
+import Link from 'next/link';
 import Image from 'next/image';
 
-export default function Home() {
+const featuredProjects = [
+  {
+    number: '01',
+    title: 'Long Black OS',
+    description:
+      'A branded loyalty and customer-experience layer for a specialty coffee shop.',
+    status: 'In progress',
+  },
+  {
+    number: '02',
+    title: 'Bilingual Wedding Site',
+    description:
+      'A custom, accessible celebration experience designed for two languages and one story.',
+    status: 'In progress',
+  },
+  {
+    number: '03',
+    title: 'Ground Systems Simulator',
+    description:
+      'An operations-focused interface for interpreting complex data and supporting better decisions.',
+    status: 'In progress',
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className="flex flex-1 flex-col items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex w-full max-w-3xl flex-1 flex-col items-center justify-between bg-white px-16 py-32 sm:items-start dark:bg-black">
-        <Image
-          className="h-5 w-[100px] dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl leading-10 font-semibold tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{' '}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{' '}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{' '}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{' '}
-            or the{' '}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{' '}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="bg-foreground text-background flex h-12 w-full items-center justify-center gap-2 rounded-full px-5 transition-colors hover:bg-[#383838] md:w-[158px] dark:hover:bg-[#ccc]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="h-[14px] w-4 dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] md:w-[158px] dark:border-white/[.145] dark:hover:bg-[#1a1a1a]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+    <main>
+     <header className="site-header">
+  <Link className="wordmark" href="/" aria-label="Dinhfolio home">
+    <span>DINHFOLIO</span>
+  </Link>
+
+  <nav className="desktop-nav" aria-label="Primary navigation">
+    <Link href="/work">Work</Link>
+    <Link href="/about">About</Link>
+    <Link href="/contact">Contact</Link>
+  </nav>
+
+  <Link className="nav-cta" href="/contact">
+    Let&apos;s talk <span aria-hidden="true">↗</span>
+  </Link>
+</header>
+
+      <section className="hero-banner" aria-labelledby="hero-title">
+  <div className="hero-banner-copy">
+
+    <h1 id="hero-title">
+      I build thoughtful software for real-world systems.
+    </h1>
+
+    <p className="hero-description">
+      I turn complex workflows into reliable, human-centered products—from
+      customer experiences to operational tools.
+    </p>
+
+    <div className="hero-actions">
+      <Link className="button button-primary" href="/work">
+        Explore selected work
+        <span aria-hidden="true">↗</span>
+      </Link>
+
+      <Link className="text-link" href="/about">
+        A little about me
+        <span aria-hidden="true">↓</span>
+      </Link>
     </div>
+  </div>
+
+  <div className="avatar-column">
+    <div className="avatar-frame">
+      <svg
+        className="avatar-role-ring"
+        viewBox="0 0 320 320"
+        aria-hidden="true"
+      >
+      <defs>
+        <path
+          id="avatar-role-path"
+          d="M 160,160 m -136,0 a 136,136 0 1,1 272,0 a 136,136 0 1,1 -272,0"
+        />
+      </defs>
+
+      <text>
+        <textPath href="#avatar-role-path" startOffset="2%">
+          FULL-STACK ENGINEER · PRODUCT-MINDED DEVELOPER 
+        </textPath>
+      </text>
+    </svg>
+
+    <div className="avatar-photo-wrap">
+      <Image
+        src="/images/heroprofile.jpg"
+        alt="Portrait of Patricia Dinh"
+        width={560}
+        height={560}
+        priority
+        className="avatar-photo"
+      />
+    </div>
+  </div>
+
+    <p className="avatar-note">
+      Building with care.<br />
+      Brewing with curiosity.
+    </p>
+  </div>
+  
+</section>
+
+
+      <section className="work-preview" aria-labelledby="featured-work-title">
+        <div className="section-heading">
+          <p className="eyebrow">Selected work</p>
+          <h2 id="featured-work-title">Products with a point of view.</h2>
+        </div>
+
+        <div className="project-list">
+          {featuredProjects.map((project) => (
+            <article className="project-row" key={project.number}>
+              <p className="project-number">{project.number}</p>
+
+              <div>
+                <p className="project-status">{project.status}</p>
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+              </div>
+
+              <span className="project-arrow" aria-hidden="true">
+                ↗
+              </span>
+            </article>
+          ))}
+        </div>
+      </section>
+    </main>
   );
 }
