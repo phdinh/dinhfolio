@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+cat <<'EOF' > README.md
+# Dinhfolio
 
-## Getting Started
+A software engineering portfolio built to show thoughtful products, technical depth, and a little personality.
 
-First, run the development server:
+The public experience is designed for hiring managers, collaborators, and clients: clear project case studies, architecture decisions, and direct ways to connect. Curious visitors can discover **Off Menu**, a coffee-inspired personal corner with lightweight interactive details.
+
+## Featured work
+
+- **Long Black OS** — A branded loyalty and customer-experience platform for a specialty café, designed as a modern layer around Square POS.
+- **Bilingual Wedding Site** — A custom, accessible bilingual wedding experience with an editorial visual system.
+- **Ground Systems Simulator** — An operations-focused interface for interpreting complex system data and supporting informed decisions.
+- **Optional:** Algorithm visualizer or engineering notebook.
+- **Optional:** Slack bot.
+- **Optional:** AI Kdrama recommendation system
+- **Optional:** MBTI quiz
+
+## Product principles
+
+- Make the work easy to evaluate in under a minute.
+- Show context, constraints, architecture, and trade-offs.
+- Keep the experience minimal, accessible, fast, and intentional.
+- Use coffee as subtle world-building around the professional portfolio.
+- Build the portfolio people need first; build the secret people remember second.
+
+## Stack
+
+### Current
+
+- Next.js App Router
+- React
+- TypeScript
+- Tailwind CSS
+- ESLint
+- Prettier
+- Vercel deployment
+
+### Planned as the product grows
+
+- PostgreSQL
+- Prisma ORM
+- Zod validation
+- Auth.js or Clerk for private admin access
+- Object storage for media
+- Sentry and privacy-conscious analytics
+
+## Routes
+
+| Route | Purpose |
+| --- | --- |
+| `/` | Positioning, selected work, and the hero interaction |
+| `/work` | Project index |
+| `/work/[slug]` | Full case studies |
+| `/about` | Personal background and working style |
+| `/contact` | Contact form and direct links |
+| `/off-menu` | Optional hidden route for coffee notes, interests, and a mini interaction |
+| `/admin` | Future private content-management area |
+
+## Local development
+
+### Prerequisites
+
+- Node.js 20 or newer
+- npm
+
+### Start the app
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Quality checks
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run typecheck
+npm run format:check
+npm run build
+```
 
-## Learn More
+## Environment variables
 
-To learn more about Next.js, take a look at the following resources:
+Copy the example file before adding any local configuration:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+cp .env.example .env.local
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Never commit `.env.local` or real credentials.
 
-## Deploy on Vercel
+## Accessibility and performance
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The project aims for:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Semantic HTML and keyboard-accessible interactions
+- WCAG AA color contrast and visible focus states
+- Touch-friendly controls and responsive layouts
+- Support for `prefers-reduced-motion`
+- Lightweight initial loading; interactive Off Menu code loads only when needed
+
+## Status
+
+Phase 0: repository, developer tooling, deployment foundation, and design system setup.
+
+---
+
+Built with care. Brewed with curiosity.
+EOF
