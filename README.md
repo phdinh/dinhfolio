@@ -1,9 +1,8 @@
-cat <<'EOF' > README.md
 # Dinhfolio
 
-A software engineering portfolio built to show thoughtful products, technical depth, and a little personality.
+A production-minded personal portfolio built with Next.js and TypeScript.
 
-The public experience is designed for hiring managers, collaborators, and clients: clear project case studies, architecture decisions, and direct ways to connect. Curious visitors can discover **Off Menu**, a coffee-inspired personal corner with lightweight interactive details.
+The public experience presents selected engineering work clearly for hiring managers, collaborators, and clients. An optional coffee-inspired “Off Menu” route rewards curiosity with a personal interactive experience.
 
 ## Featured work
 
@@ -46,15 +45,15 @@ The public experience is designed for hiring managers, collaborators, and client
 
 ## Routes
 
-| Route | Purpose |
-| --- | --- |
-| `/` | Positioning, selected work, and the hero interaction |
-| `/work` | Project index |
-| `/work/[slug]` | Full case studies |
-| `/about` | Personal background and working style |
-| `/contact` | Contact form and direct links |
-| `/off-menu` | Optional hidden route for coffee notes, interests, and a mini interaction |
-| `/admin` | Future private content-management area |
+| Route          | Purpose                                                                   |
+| -------------- | ------------------------------------------------------------------------- |
+| `/`            | Positioning, selected work, and the hero interaction                      |
+| `/work`        | Project index                                                             |
+| `/work/[slug]` | Full case studies                                                         |
+| `/about`       | Personal background and working style                                     |
+| `/contact`     | Contact form and direct links                                             |
+| `/off-menu`    | Optional hidden route for coffee notes, interests, and a mini interaction |
+| `/admin`       | Future private content-management area                                    |
 
 ## Local development
 
