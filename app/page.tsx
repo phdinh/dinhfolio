@@ -45,7 +45,11 @@ export default function HomePage() {
 
       <section className="hero-banner" aria-labelledby="hero-title">
         <div className="hero-banner-copy">
-          <h1 id="hero-title">I build thoughtful software for real-world systems.</h1>
+          <h1 id="hero-title">
+            I build <span className="hero-serif">thoughtful</span>
+            <br />
+            software for <span className="hero-serif">real-world systems. </span>
+          </h1>
 
           <p className="hero-description">
             I turn complex workflows into reliable, human-centered products—from customer
@@ -66,7 +70,11 @@ export default function HomePage() {
         </div>
 
         <div className="avatar-column">
-          <div className="avatar-frame">
+          <Link
+            className="avatar-frame avatar-trigger"
+            href="/off-menu"
+            aria-label="Explore my Secret Menu!"
+          >
             <svg className="avatar-role-ring" viewBox="0 0 320 320" aria-hidden="true">
               <defs>
                 <path
@@ -77,7 +85,7 @@ export default function HomePage() {
 
               <text>
                 <textPath href="#avatar-role-path" startOffset="2%">
-                  FULL-STACK ENGINEER · PRODUCT-MINDED DEVELOPER
+                  FULL-STACK ENGINEER · PRODUCT-MINDED BUILDER ·
                 </textPath>
               </text>
             </svg>
@@ -92,7 +100,11 @@ export default function HomePage() {
                 className="avatar-photo"
               />
             </div>
-          </div>
+
+            <span className="avatar-tooltip" aria-hidden="true">
+              Explore my secret menu
+            </span>
+          </Link>
 
           <p className="avatar-note">
             Building with care.

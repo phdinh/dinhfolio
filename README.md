@@ -4,7 +4,7 @@ A production-minded personal portfolio built with Next.js and TypeScript.
 
 The public experience presents selected engineering work clearly for hiring managers, collaborators, and clients. An optional coffee-inspired “Off Menu” route rewards curiosity with a personal interactive experience.
 
-## Featured work
+## Planned Featured works
 
 - **Long Black OS** — A branded loyalty and customer-experience platform for a specialty café, designed as a modern layer around Square POS.
 - **Bilingual Wedding Site** — A custom, accessible bilingual wedding experience with an editorial visual system.
@@ -24,15 +24,17 @@ The public experience presents selected engineering work clearly for hiring mana
 
 ## Stack
 
+- Next.js App Router
+- React + TypeScript
+- Tailwind CSS
+- PostgreSQL + Prisma (planned after public MVP)
+- Vercel deployment
+- Zod validation, secure server routes, and privacy-conscious analytics
+
 ### Current
 
-- Next.js App Router
-- React
-- TypeScript
-- Tailwind CSS
 - ESLint
 - Prettier
-- Vercel deployment
 
 ### Planned as the product grows
 
