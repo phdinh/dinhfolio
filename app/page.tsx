@@ -23,6 +23,38 @@ const featuredProjects = [
     status: 'In progress',
   },
 ];
+const experiences = [
+  {
+    id: 'gd',
+    period: '2024 — 2026',
+    role: 'Full-Stack Software Engineer',
+    company: 'General Dynamics Nassco-Norfolk',
+    summary:
+      'Building and modernizing internal software for complex, operations-heavy workflows in a compliance-driven environment. Supporting a lean team of engineers to deliver reliable, maintainable applications that reduce ambiguity and improve business processes.',
+    highlights: [
+      'Helped migrate a legacy requisition workflow across three business units with convoluted approval processes and business rules.',
+      'Translated undocumented operational knowledge into explicit workflow states, validation rules, and dependable system behavior.',
+      'Used markup, JavaScript, C#, .NET, SQL, and REST APIs in a multi-project TFS solution to support reliable, maintainable applications.',
+      'Focused on reducing duplicate approvals, process drift, and ambiguity in high-dependency systems.',
+    ],
+    stack: ['ASP.Net', 'JavaScript', 'C#', '.NET', 'SQL', 'REST APIs'],
+  },
+  {
+    id: 'builder',
+    period: '2024 — Present',
+    role: 'Independent Product Builder',
+    company: 'Personal Projects',
+    summary:
+      'Designing and shipping thoughtful web products from first workflow to polished interface for small business owners or professional skill demonstration.',
+    highlights: [
+      'Building Long Black OS, a branded customer experience and loyalty layer designed around a specialty café’s existing Square ecosystem.',
+      'Creating a bilingual, accessibility-conscious wedding site that treats language and cultural context as core product requirements.',
+      'Developing Dinhfolio as a production-minded portfolio with a polished public experience and an optional personal “Off Menu” discovery.',
+      'Using rapid iteration, product discovery, and design systems to move concepts toward shippable MVPs.',
+    ],
+    stack: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS', 'PostgreSQL', 'Prisma'],
+  },
+];
 
 export default function HomePage() {
   return (
@@ -138,6 +170,55 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+      <section className="experience-section" id="experience" aria-labelledby="experience-title">
+  <div className="experience-header">
+    <div>
+      <p className="eyebrow">Professional experience</p>
+      <h2 id="experience-title">The work behind the work.</h2>
+    </div>
+
+    <p className="experience-intro">
+      A little more context on the systems, workflows, and product problems I
+      have worked through.
+    </p>
+  </div>
+
+  <div className="experience-list">
+    {experiences.map((experience) => (
+      <details className="experience-item" key={experience.id}>
+        <summary>
+          <span className="experience-period">{experience.period}</span>
+
+          <span className="experience-title-group">
+            <span className="experience-role">{experience.role}</span>
+            <span className="experience-company">{experience.company}</span>
+          </span>
+
+          <span className="experience-toggle" aria-hidden="true">
+            <span />
+            <span />
+          </span>
+        </summary>
+
+        <div className="experience-content">
+          <p className="experience-summary">{experience.summary}</p>
+
+          <ul className="experience-highlights">
+            {experience.highlights.map((highlight) => (
+              <li key={highlight}>{highlight}</li>
+            ))}
+          </ul>
+
+          <div className="experience-stack" aria-label="Technologies used">
+            {experience.stack.map((technology) => (
+              <span key={technology}>{technology}</span>
+            ))}
+          </div>
+        </div>
+      </details>
+    ))}
+  </div>
+</section>
     </main>
   );
 }
